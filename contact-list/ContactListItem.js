@@ -2,7 +2,8 @@ import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
 const ContactListItem = ({ profileImage, name, itemPosition }) => (
-  <View style={[styles.container, {flexDirection: 'rowreverse' && itemPosition}]} key={profileImage}>
+  const flexDir = itemPosition ? 'row' : 'row-reverse';
+  <View style={[styles.container, {flexDirection: flexDir }]} key={profileImage}>
     <Image source={{uri:profileImage}} style={{ width: 50, height: 50,borderRadius:25 }} />
     <Text style={{marginLeft:10}}>{name} {itemPosition}</Text> 
   </View>
